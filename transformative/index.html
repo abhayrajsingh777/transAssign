@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transformative Learning Solutions</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+<body>
+  <main id="login_page" class="d_flex">
+    <div class="d_flex jus_sb t_a_center fd_col">
+      <header class="t_a_lft">
+        <a href="">
+          <img src="assets/logo.png" alt="Transformative logo">
+        </a>
+      </header>
+      <section>
+        <div class="font_hb col_g">TRANSFORMATIVE</div>
+        <h2 class="font_lb col_v">
+          YOUR LOGISTIC, INVENTORY AND ORDER JUST A CLICK AWAY
+        </h2>
+        <a href="#" class="col_g font_lb">LEARN MORE</a>
+      </section>
+      <footer>
+        <ul class="d_flex jus_sb">
+          <li><a href="" class="ion-social-facebook"></a></li>
+          <li><a href="" class="ion-social-twitter"></a></li>
+          <li><a href="" class="ion-social-instagram-outline"></a></li>
+          <li><a href="" class="ion-social-youtube"></a></li>          
+        </ul>
+      </footer>
+    </div>
+
+    <div class="d_flex jus_c jus_c_v">
+        <div class="form">
+          <h1 class="col_w font_lb">Sign in to Transformative.</h1>
+          <legend class="col_v_l font_lr">Enter your details below</legend>
+          <dir>
+            <label class="font_lb col_w">EMAIL</label>
+            <div class="pos_rel">
+              <input type="text" name="email" id="email" autocomplete="off" placeholder="jhoncarter@gmail.com" minlength="5"> 
+              <p id="userEmail-info" class="info col_rl"></p>
+            </div>             
+          </dir>
+          <dir>
+            <label class="font_lb col_w">PASSWORD</label>
+            <div class="pos_rel">
+              <input type="password" name="password" id="password" autocomplete="off" placeholder="Password">
+              <p id="password-info" class="info col_rl"></p>
+            </div>
+          </dir>
+          <div class="d_flex col_v_l jus_sb font_lr">
+            <span class="d_flex">
+                <input type="checkbox" name="name">
+                <span>Remember me</span>
+            </span>
+            <span>Forgot Email/Password?</span>
+          </div>
+          <button class="font_lb col_w" name="submit" onClick="validateContact();">
+            SIGN IN
+          </button>          
+        </div>
+    </div>
+  </main>
+
+  <script type="text/javascript">
+    $(document).ready(function(){ 
+    $("input,textarea").on("keypress", function(e) {
+      if (e.which === 32 && !this.value.length)
+        e.preventDefault();
+    });
+  });    
+function validateContact() {
+    var valid = true;   
+    $(".info").html('');
+    
+    if(!$("#email").val()) {
+        $("#userEmail-info").html("(required)");
+        valid = false;
+    }
+    if(!$("#email").val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) {
+        $("#userEmail-info").html("(invalid email)");
+        valid = false;
+    }
+    if(!$("#password").val()) {
+        $("#password-info").html("(required)");
+        valid = false;
+    }  
+    if(!$("#email").val()=='' && !$("#password").val()=='') {
+        window.location.href = 'dashboard.html';
+        valid = false;
+    }           
+    return valid;
+
+}
+  </script>
+</body>
+</html>
+
+    
